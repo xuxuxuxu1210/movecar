@@ -19,3 +19,8 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+第一批安装的依赖
+less  axios  swiper vuex   
+已有 样式重置文件 和字体大小自适应文件  375px
