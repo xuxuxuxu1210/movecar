@@ -10,13 +10,17 @@
     <div class="link">
     <router-link  to="/shaixuana">按价格</router-link>
     <router-link  to="/shaixuanb">按车型</router-link>
+    
     </div>
     <ul>
-        <li><span class="spa">价格不限</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-        <li><span class="spa">￥150以下</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-        <li><span class="spa">￥150-￥300</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-        <li><span class="spa">￥300-￥500</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-        <li><span class="spa">￥500以上</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
+      <li v-for="(item,ind) in Fo" :key="ind" @click="dian(ind)">
+        <span class="spa">{{item.title}}</span>
+        <span class="spb"> 
+          <img src="./../../image/xhh/icon_duihao@2x.png"
+          v-show="ind == numbe?true:false">
+         <img src="./../../image/xhh/icon_1_n@2x.png"
+          v-show="ind == numbe?false:true"></span>
+        </li>
     </ul>
     <div class="button">
     <button>确定</button>
@@ -28,11 +32,21 @@
 export default {
   data() {
     return {
-
+Fo:[
+            {title:"价格不限"},
+            {title:"￥150以下"},
+            {title:"￥150-￥300"},
+            {title:"￥300-￥500"},
+            {title:"￥500以上"},
+        ],
+        numbe:0,
     }
   },
   methods: {
-
+dian(ind){
+      this.numbe=ind;
+      console.log(ind);
+    },
   },
   components: {
 
@@ -117,24 +131,27 @@ ul{
          .spa{
               margin-top:.14rem;
               float:left;
+              color:rgba(102,102,102,1);
          }
          .spb{
+            width:.21rem;
+            height:.21rem;
              margin-top:.14rem;
              float:right;
-             img{
-                 width: 70%;
-                 height:70%;
-             }
+         }
+         img{
+           width:100%;
+           height:100%;
          }
      }
      li:last-child{
          border:none;
      }
+
  }
  .button{    
      margin-top: 1.9rem;
  button{
-     
      border:none;
      background:#F9C307;
      color:#FFFFFF;

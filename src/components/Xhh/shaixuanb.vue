@@ -12,13 +12,15 @@
     <router-link  to="/shaixuanb">按车型</router-link>
     </div>
     <ul>
-        <li><span class="spa">经济型</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-        <li><span class="spa">舒适型</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-        <li><span class="spa">豪华型</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-        <li><span class="spa">中巴/大巴</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-        <li><span class="spa">SUV</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-        <li><span class="spa">MPV</span><a href=""><span class="spb"><img src="../../image/xhh/icon_duihao@2x.png" alt=""></span></a></li>
-    </ul>
+       <li v-for="(item,ind) in Fo" :key="ind" @click="dian(ind)">
+        <span class="spa">{{item.title}}</span>
+        <span class="spb"> 
+          <img src="./../../image/xhh/icon_duihao@2x.png"
+          v-show="ind == numbe?true:false">
+         <img src="./../../image/xhh/icon_1_n@2x.png"
+          v-show="ind == numbe?false:true"></span>
+        </li>
+        </ul>
     <div class="button">
     <button>确定</button>
     </div>
@@ -29,11 +31,22 @@
 export default {
   data() {
     return {
-
+Fo:[
+            {title:"经济型"},
+            {title:"舒适型"},
+            {title:"豪华型"},
+            {title:"中巴/大巴"},
+            {title:"SUV"},
+            {title:"MPV"},
+        ],
+        numbe:0,
     }
   },
   methods: {
-
+dian(ind){
+      this.numbe=ind;
+      console.log(ind);
+    },
   },
   components: {
 
@@ -119,16 +132,21 @@ ul{
          .spa{
               margin-top:.14rem;
               float:left;
+              color:rgba(102,102,102,1);
          }
-         .spb{
+          .spb{
+            width:.21rem;
+            height:.21rem;
              margin-top:.14rem;
              float:right;
-             img{
-                 width: 70%;
-                 height:70%;
-                 color: #cccccc;
-             }
          }
+         img{
+           width:100%;
+           height:100%;
+         }
+     }
+     a.router-link-active{
+       background:url('./../../image/xhh/icon_duihao@2x.png')
      }
      li:last-child{
          border:none;

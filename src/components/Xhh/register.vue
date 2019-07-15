@@ -2,7 +2,7 @@
   <div>
       <div class="register">
 <div class="header">
-      <router-link to="/guide2">
+      <router-link to="/guide">
         <img src="./../../image/xhh/返回(1)拷贝6@2x.png" alt />
        </router-link>
 </div>
