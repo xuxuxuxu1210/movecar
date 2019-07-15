@@ -8,6 +8,13 @@ import Setting from '@/components/Zyb/setting/setting'
 import Locat from '@/components/Zyb/location/locat'
 import Shop from '@/components/Zyb/shop/shop'
 
+//充值页面
+import Recharge from './../page/Zmy/recharge/recharge.vue'
+//充值成功
+import Recharge_success from './../page/Zmy/recharge_success/recharge_success.vue'
+//我的钱包
+import Wallet from './../page/Zmy/wallet/wallet.vue'
+
 
 // 2J列表
 // 附近门店
@@ -99,5 +106,20 @@ export default new Router({
         },
       ]
     },
+    {
+      path:'/recharge',
+      name:'Recharge',
+      component:Recharge
+    },
+    {
+      path:'/recharge_success',
+      name:'Recharge_success',
+      component:Recharge_success
+    },
+    {
+      path:'/wallet',
+      name:'Wallet',
+      component:Wallet
+    }
   ]
 })
