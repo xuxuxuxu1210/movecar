@@ -265,6 +265,7 @@ console.log(index)
          box-sizing: border-box;
         .stores_one_div_textarea{
           flex:1;
+          .font12();
           // width:100%;
           // height:0.6773rem;
         
@@ -343,6 +344,7 @@ console.log(index)
          box-sizing: border-box;
         .stores_one_div_textarea{
           flex:1;
+          .font12();
           // width:100%;
           // height:0.6773rem;
         

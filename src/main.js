@@ -40,7 +40,7 @@ let store = new Vuex.Store({
 Vue.config.productionTip = false
 
 // su gui xi
-import store from './store/store.js'
+// import store from './store/store.js'
 import Animation from 'animate.css'
 Vue.use(Animation);
 
@@ -49,7 +49,7 @@ Vue.use(Animation);
 new Vue({
   el: '#app',
   router,
-  store,
+  // store,
   components: { App },
   template: '<App/>'
   
