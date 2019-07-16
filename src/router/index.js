@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// import HelloWorld from '@/components/HelloWorld'
+import Guide from './../components/Xhh/guide.vue'//引导页
 
 
 import HelloWorld from '@/components/SGX/HelloWorld'//评论列表页
@@ -15,6 +17,20 @@ import Attestation from '@/components/Zyb/attescar/attestation'
 import Setting from '@/components/Zyb/setting/setting'
 import Locat from '@/components/Zyb/location/locat'
 import Shop from '@/components/Zyb/shop/shop'
+//首页侧边栏
+import Sidebar from '@/components/jqy/sidebar'
+//到店取车
+import Shopcar from "./../components/jqy/shopcar"
+//首页
+import Home from "@/components/jqy/home"
+//换车结算
+import Orderend from "./../components/jqy/returncar_"
+//充值页面
+import Recharge from './../page/Zmy/recharge/recharge.vue'
+//充值成功
+import Recharge_success from './../page/Zmy/recharge_success/recharge_success.vue'
+//我的钱包
+import Wallet from './../page/Zmy/wallet/wallet.vue'
 
 
 // 2J列表
@@ -36,6 +52,10 @@ import Zyshop from '@/components/Zyb/shop/2jpag/zyshop'
 
 
 
+import Shaixuana from './../components/Xhh/shaixuana.vue'//价格筛选
+import Shaixuanb from './../components/Xhh/shaixuanb.vue'//车型筛选
+import Register from './../components/Xhh/register.vue'//注册
+import Login from './../components/Xhh/login.vue'//登录
 Vue.use(Router)
 
 export default new Router({
@@ -84,6 +104,60 @@ export default new Router({
       name:'Evaluation',
       meta: { index: 5 },
       component:Evaluation
+    //引导页
+    },
+    {
+      path: '/',
+      name: 'Guide',
+      component: Guide
+    },
+    {
+      path: '/guide',
+      name: 'Guide',
+      component: Guide
+    },
+    //价格筛选
+    {
+      path: '/shaixuana',
+      name: 'Shaixuana',
+      component: Shaixuana
+     
+},
+//车型筛选
+{
+  path: '/shaixuanb',
+  name: 'Shaixuanb',
+  component: Shaixuanb
+},
+//注册
+{
+  path: '/register',
+  name: 'Register',
+  component: Register
+},
+// //登录
+// {
+//   path: '/login',
+//   name: 'Login',
+//   component: Login
+// },
+    //车型筛选
+    {
+      path: '/shaixuanb',
+      name: 'Shaixuanb',
+      component: Shaixuanb
+    },
+    //注册
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
+    //登录
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/Carlist',
@@ -109,7 +183,7 @@ export default new Router({
       path: '/Shop',
       name: 'Shop',
       component: Shop,
-      children:[
+      children: [
         {
           path: '/',
           name: '',
@@ -151,6 +225,35 @@ export default new Router({
           component: Zyshop
         },
       ]
+    },
+    {
+      path: '/recharge',
+      name: 'Recharge',
+      component: Recharge
+    },
+    {
+      path: '/recharge_success',
+      name: 'Recharge_success',
+      component: Recharge_success
+    },
+    {
+      path:'/wallet',
+      name:'Wallet',
+      component:Wallet
+    },
+    {
+      path:'/orderend',
+      name:'Orderend',
+      component:Orderend
+    },
+    {
+      path: '/shopcar',
+      name: 'Shopcar',
+      component: Shopcar
+    }, {
+      path: '/home',
+      name: 'Home',
+      component: Home
     },
   ]
 })
