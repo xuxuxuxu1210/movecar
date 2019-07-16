@@ -64,7 +64,7 @@ export default new Router({
       name: 'Guide',
       component: Guide
     },
-//价格筛选
+    //价格筛选
     {
       path: '/shaixuana',
       name: 'Shaixuana',
@@ -83,12 +83,31 @@ export default new Router({
   name: 'Register',
   component: Register
 },
-//登录
-{
-  path: '/login',
-  name: 'Login',
-  component: Login
-},{
+// //登录
+// {
+//   path: '/login',
+//   name: 'Login',
+//   component: Login
+// },
+    //车型筛选
+    {
+      path: '/shaixuanb',
+      name: 'Shaixuanb',
+      component: Shaixuanb
+    },
+    //注册
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
+    //登录
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
       path: '/Carlist',
       name: 'Carlist',
       component: Carlist
@@ -112,7 +131,7 @@ export default new Router({
       path: '/Shop',
       name: 'Shop',
       component: Shop,
-      children:[
+      children: [
         {
           path: '/',
           name: '',
@@ -156,14 +175,14 @@ export default new Router({
       ]
     },
     {
-      path:'/recharge',
-      name:'Recharge',
-      component:Recharge
+      path: '/recharge',
+      name: 'Recharge',
+      component: Recharge
     },
     {
-      path:'/recharge_success',
-      name:'Recharge_success',
-      component:Recharge_success
+      path: '/recharge_success',
+      name: 'Recharge_success',
+      component: Recharge_success
     },
     {
       path:'/wallet',
