@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
 import Guide from './../components/Xhh/guide.vue'//引导页
 
 
@@ -17,8 +16,8 @@ import Attestation from '@/components/Zyb/attescar/attestation'
 import Setting from '@/components/Zyb/setting/setting'
 import Locat from '@/components/Zyb/location/locat'
 import Shop from '@/components/Zyb/shop/shop'
-//首页侧边栏
-import Sidebar from '@/components/jqy/sidebar'
+
+
 //到店取车
 import Shopcar from "./../components/jqy/shopcar"
 //首页
@@ -59,14 +58,8 @@ import Login from './../components/Xhh/login.vue'//登录
 Vue.use(Router)
 
 export default new Router({
-  
+
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'HelloWorld',
-    //   component: HelloWorld
-    // }
-    // ,
     {
       path: '/HelloWorld',
       name: 'HelloWorld',
@@ -76,35 +69,35 @@ export default new Router({
 
     ,
     {
-      path:'/Index',
-      name:'Index',
+      path: '/Index',
+      name: 'Index',
       meta: { index: 1 },
-      component:Index
+      component: Index
     },
     {
-      path:'/Paysuccess',
-      name:'Paysuccess',
+      path: '/Paysuccess',
+      name: 'Paysuccess',
       meta: { index: 2 },
-      component:Paysuccess
+      component: Paysuccess
     },
     {
-      path:'/Orderdetails',
-      name:'Orderdetails',
+      path: '/Orderdetails',
+      name: 'Orderdetails',
       meta: { index: 3 },
-      component:Orderdetails
+      component: Orderdetails
     },
     {
-      path:'/Orderinformation',
-      name:'Orderinformation',
+      path: '/Orderinformation',
+      name: 'Orderinformation',
       meta: { index: 4 },
-      component:Orderinformation
+      component: Orderinformation
     },
     {
-      path:'/Evaluation',
-      name:'Evaluation',
+      path: '/Evaluation',
+      name: 'Evaluation',
       meta: { index: 5 },
-      component:Evaluation
-    //引导页
+      component: Evaluation
+      //引导页
     },
     {
       path: '/',
@@ -121,26 +114,26 @@ export default new Router({
       path: '/shaixuana',
       name: 'Shaixuana',
       component: Shaixuana
-     
-},
-//车型筛选
-{
-  path: '/shaixuanb',
-  name: 'Shaixuanb',
-  component: Shaixuanb
-},
-//注册
-{
-  path: '/register',
-  name: 'Register',
-  component: Register
-},
-// //登录
-// {
-//   path: '/login',
-//   name: 'Login',
-//   component: Login
-// },
+
+    },
+    //车型筛选
+    {
+      path: '/shaixuanb',
+      name: 'Shaixuanb',
+      component: Shaixuanb
+    },
+    //注册
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
+    // //登录
+    // {
+    //   path: '/login',
+    //   name: 'Login',
+    //   component: Login
+    // },
     //车型筛选
     {
       path: '/shaixuanb',
@@ -237,14 +230,14 @@ export default new Router({
       component: Recharge_success
     },
     {
-      path:'/wallet',
-      name:'Wallet',
-      component:Wallet
+      path: '/wallet',
+      name: 'Wallet',
+      component: Wallet
     },
     {
-      path:'/orderend',
-      name:'Orderend',
-      component:Orderend
+      path: '/orderend',
+      name: 'Orderend',
+      component: Orderend
     },
     {
       path: '/shopcar',
