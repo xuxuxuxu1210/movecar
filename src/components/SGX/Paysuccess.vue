@@ -7,6 +7,7 @@
             <!-- <img src="../../../static/SGXimg/icon_back@2x.png" alt="" /> -->
           </router-link>
           <span class="head">支付完成</span>
+           <span class="next"></span>
         </div>
       </div>
     </Public>
@@ -52,6 +53,10 @@ export default {
 </script>
 
 <style scoped lang="less">
+*{
+    font-family:'PingFang-SC-Bold';
+}
+
 .payover {
   width: 100%;
   height: 100%;
@@ -98,7 +103,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 0.25rem;
+        margin-top: 0.23rem;
         &>span:nth-child(1){
           margin-right:0.12rem;
           img {

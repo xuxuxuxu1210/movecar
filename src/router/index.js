@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/SGX/HelloWorld'
-import Index from '../components/SGX/index.vue'
-import Paysuccess from '../components/SGX/Paysuccess.vue'
-import Orderdetails from '../components/SGX/Order-details.vue'
+
+
+import HelloWorld from '@/components/SGX/HelloWorld'//评论列表页
+import Index from '../components/SGX/index.vue'//全部评论页
+import Paysuccess from '../components/SGX/Paysuccess.vue'//支付完成待取车页
+import Orderdetails from '../components/SGX/Order-details.vue'//订单详情页
+import Orderinformation from '../components/SGX/orderinformation.vue' //订单信息页
+import Evaluation from '../components/SGX/evaluation.vue'//评价页
 
 
 import Carlist from '@/components/Zyb/thecarlist/carlist'
@@ -46,7 +50,7 @@ export default new Router({
     {
       path: '/HelloWorld',
       name: 'HelloWorld',
-      meta: { index: 0 },
+      meta: { index: 0 }, //
       component: HelloWorld
     },
 
@@ -68,6 +72,18 @@ export default new Router({
       name:'Orderdetails',
       meta: { index: 3 },
       component:Orderdetails
+    },
+    {
+      path:'/Orderinformation',
+      name:'Orderinformation',
+      meta: { index: 4 },
+      component:Orderinformation
+    },
+    {
+      path:'/Evaluation',
+      name:'Evaluation',
+      meta: { index: 5 },
+      component:Evaluation
     },
     {
       path: '/Carlist',

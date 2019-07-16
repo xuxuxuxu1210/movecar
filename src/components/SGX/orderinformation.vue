@@ -3,16 +3,16 @@
     <Public>
       <div class="big-box" slot="heade">
         <div class="header">
-          <router-link to='/Paysuccess' class="back">
+          <router-link to="/Paysuccess" class="back">
             <!-- <img src="../../../static/SGXimg/icon_back@2x.png" alt="" /> -->
           </router-link>
-          <span class="head">订单详情</span>
+          <span class="head">订单信息</span>
            <span class="next"></span>
         </div>
       </div>
     </Public>
     <ul class="list">
-      <li class="cardetails animated zoomIn  delay faster">
+      <li class="cardetails animated bounceInUp  delay faster">
         <div class="cardetails_one">
           <div>
             <p>车辆信息</p>
@@ -51,7 +51,7 @@
           </div>
         </div>
       </li>
-      <li class="stores animated zoomIn delay1 faster">
+      <li class="stores animated bounceInUp  delay1 faster">
         <div>
           <p class="tit">
             取车地点：
@@ -79,44 +79,38 @@
           </p>
         </div>
       </li>
-      <li class="insurance animated zoomIn  delay2 faster">
-        <div class="drivertit1">
-          <p class="fjfw">租车保障及附加服务</p>
+      <li class="Payli animated bounceInUp  delay2 faster">
+        <div class="Paylione">
+          <p>
+            <span class="zhmoney">金额：</span>
+            <span class="money">￥ 1561651</span>
+          </p>
         </div>
-        <div class="fjfwxq">
-          <span @click="jbfw()" class="bigspan">
-            <span v-bind:class="{ bol:jbfwbol, 'bolq': !jbfwbol }"></span>
-            基本服务
-          </span>
-          <span @click="qm()" class="bigspan">
-            <span v-bind:class="{ bol:qmbol, 'bolq': !qmbol }"></span>
-            全面保障服务
-          </span>
-          <span @click="rs()" class="bigspan">
-            <span v-bind:class="{ bol:rsbol, 'bolq': !rsbol }"></span>人身财务险
-          </span>
+        <div class="Paylitwo">
+          <p>支付方式</p>
+          <p @click="jbfw()">
+            <span :class="[jbfwbol?'payusermoney':'']"></span>账户余额
+          </p>
         </div>
-      </li>
-      <li class="driver animated zoomIn  delay3 faster">
-        <div class="drivertit2">
-          <p class="fjfw1">预定信息</p>
+        <div class="Paylithree">
+          <p @click="qm()">
+            <span :class="[qmbol?'payusermoney':'']"></span>支付宝支付
+          </p>
         </div>
-        <div class="drivernews">
-          <div>
-            <p>驾驶员</p>
-            <p>驾驶员手机号</p>
-            <p>订单号</p>
-          </div>
-          <div>
-           <div>
-             <p class="pone">全小龙</p>
-             <p>身份证<span>161651651651615</span></p>
-           </div>
-           <p class="driverphone">1561651616</p>
-           <p>165165165165</p>
-          </div>
+        <div class="Paylifour">
+          <p @click="rs()">
+            <span :class="[rsbol?'payusermoney':'']"></span>微信支付
+          </p>
+          <p>
+            <span
+              @click="rental()"
+              :class="[rental_agreement?'rental_agreement_huang':'rental_agreement_hui']"
+            ></span>
+            <a href>rental_agreement</a>
+          </p>
         </div>
       </li>
+      <li class="determine" @click="determine()">支付</li>
     </ul>
   </div>
 </template>
@@ -128,18 +122,36 @@ export default {
     return {
       jbfwbol: false,
       qmbol: false,
-      rsbol: false
+      rsbol: false,
+      rental_agreement: false
     };
   },
   methods: {
     jbfw() {
-      this.jbfwbol ? (this.jbfwbol = false) : (this.jbfwbol = true);
+      this.jbfwbol
+        ? (this.jbfwbol = false)
+        : ((this.jbfwbol = true), (this.qmbol = false), (this.rsbol = false));
+      console.log(666);
     },
     qm() {
-      this.qmbol ? (this.qmbol = false) : (this.qmbol = true);
+      this.qmbol
+        ? (this.qmbol = false)
+        : ((this.qmbol = true), (this.jbfwbol = false), (this.rsbol = false));
     },
     rs() {
-      this.rsbol ? (this.rsbol = false) : (this.rsbol = true);
+      this.rsbol
+        ? (this.rsbol = false)
+        : ((this.rsbol = true), (this.jbfwbol = false), (this.qmbol = false));
+    },
+    rental() {
+      this.rental_agreement
+        ? (this.rental_agreement = false)
+        : (this.rental_agreement = true);
+    },
+    determine() {
+      this.rental_agreement && (this.jbfwbol || this.qmbol || this.rsbol)
+        ? console.log("zhi fu cheng gong")
+        : console.log("qingtongyi");
     }
   },
   components: {
@@ -158,10 +170,11 @@ export default {
   flex-direction: column;
 }
 .pstyle {
-  height: 0.14rem;
+  //   height: 0.14rem;
   font-size: 0.14rem;
-  font-weight: bold;
+  font-weight:bold;
   color: #333333;
+  font-family:'PingFang-SC-Bold';
 }
 .pstyle1 {
   .pstyle();
@@ -174,17 +187,50 @@ export default {
   color: #f9c307;
   font-weight: bold;
 }
-.navmo{
-  font-size:0.12rem;
-  font-weight:bold;
-  color:#666666
+.navmo {
+  font-size: 0.12rem;
+  font-weight: bold;
+  color: #666666;
+    font-family:'PingFang-SC-Bold';
 }
-.drivertit{
- flex: 1;
-        display: flex;
-        align-items: center;
-          border-bottom:1px solid #ccc;
-          .pstyle()
+.payusermoney {
+  background: url("../../../static/SGXimg/duihao.png");
+  background-size: 100% 100%;
+}
+
+.payment {
+  display: inline-block;
+  width: 0.16rem;
+  height: 0.16rem;
+  margin-right: 0.1rem;
+  // vertical-align: top;
+}
+.payborderbottom {
+  border-bottom: 0.01rem solid #ccc;
+}
+.align-items {
+  display: flex;
+  align-items: center;
+}
+.rental_agreement_hui {
+  background: url("../../../static/SGXimg/hui.png") no-repeat center center;
+  background-size: 100% 100%;
+}
+.rental_agreement_huang {
+  background: url("../../../static/SGXimg/huang.png") no-repeat center center;
+  background-size: 100% 100%;
+}
+.drivertit {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  .pstyle();
+}
+.Paylifont {
+  font-size: 0.13rem;
+  color: #333333;
+  margin-left: 0.22rem;
 }
 .order {
   width: 100%;
@@ -197,7 +243,7 @@ export default {
       background-color: white;
       border-radius: 0.1rem;
       box-sizing: border-box;
-      animation-duration: 0.8s;
+      animation-duration: 1s;
     }
     .cardetails {
       width: 3.43rem;
@@ -222,9 +268,9 @@ export default {
             .pstyle();
           }
           img {
-            width: 1.3rem;
-            height: 0.54rem;
-            margin: 0.08rem 0 0.11rem 0.09rem;
+            width: 1.11rem;
+            height: 0.46rem;
+            margin: 0.05rem 0 0.11rem 0.09rem;
           }
         }
         & > div:nth-child(2) {
@@ -245,15 +291,17 @@ export default {
             margin-top: 0.09rem;
             span {
               //   flex:1;
-              background-color: #fb8c00;
+              // background-color: #fb8c00;
               border-radius: 0.095rem;
               margin-left: 0.09rem;
               text-align: center;
               line-height: 0.19rem;
-              color: white;
+              color: #999999;
               font-weight: 550;
               font-size: 0.12rem;
               padding: 0 0.05rem;
+              font-weight:bold;
+              border:0.01rem solid #ccc;
             }
           }
         }
@@ -265,7 +313,7 @@ export default {
           text-align: center;
           .cartime {
             .pstyle();
-            margin-top: 0.08rem;
+            margin-top: 0.122rem;
           }
           .cardate {
             height: 0.12rem;
@@ -279,7 +327,7 @@ export default {
             font-size: 0.12rem;
             color: #666666;
             height: 0.12rem;
-            margin-top: 0.32rem;
+            margin-top: 0.41rem;
           }
         }
       }
@@ -295,6 +343,7 @@ export default {
 
         .tit {
           .pstyle();
+          height:0.14rem;
           display: flex;
           align-items: center;
           .qcGPS {
@@ -327,103 +376,108 @@ export default {
         margin-top: 0.12rem;
       }
     }
-    .insurance {
-      height: 0.75rem;
-      padding:0 0.12rem;
-      .flex-column();
-      .drivertit1{
-      .drivertit();
-        .fjfw {
-          .pstyle1();
+    .Payli {
+      height: 2.08rem;
+      padding: 0 0.12rem;
+      box-sizing: border-box;
+      .Paylione {
+        height: 0.37rem;
+        .payborderbottom();
+        line-height: 0.37rem;
+        p {
+          .pstyle();
+          //       .zhmoney {
+          //    }
+          .money {
+            color: #fe3837;
+          }
         }
       }
+      .Paylitwo {
+        height: 0.71rem;
+        .flex-column();
+        .payborderbottom();
 
-      .fjfwxq {
-        flex:1;
-        display: flex;
-        justify-content: space-around;
-        // box-sizing:border-box;
-        .bigspan {
-          font-size: 0.12rem;
-          font-weight: 550;
-          color: #666666;
-          display: flex;
-          align-items: center;
+        & > p:nth-child(1) {
+          padding-top: 0.12rem;
+          flex: 1;
+          .pstyle();
+        }
+        & > p:nth-child(2) {
+          flex: 1;
+          .Paylifont();
+          .align-items();
           span {
-            width: 0.15rem;
-            height: 0.15rem;
-            border-radius: 50%;
-            margin-right: 0.08rem;
+            .payment();
           }
-          .bolq {
-            border: 1px solid #ccc;
+        }
+      }
+      .Paylithree {
+        height: 0.37rem;
+        .payborderbottom();
+        display: flex;
+
+        p {
+          flex: 1;
+          .Paylifont();
+          .align-items();
+          span {
+            .payment();
           }
-          .bol {
-            background: url("./../../../static/SGXimg/icon_duihao@2x.png")
-              no-repeat center center;
-            background-size: 100% 100%;
+        }
+      }
+      .Paylifour {
+        height: 0.62rem;
+        .flex-column();
+        & > p:nth-child(1) {
+          flex: 1;
+          .Paylifont();
+          .align-items();
+          span {
+            .payment();
+          }
+        }
+
+        & > p:nth-child(2) {
+          flex: 1;
+          .Paylifont();
+          margin-left: 0;
+          .align-items();
+          span {
+            display: inline-block;
+            width: 0.13rem;
+            height: 0.13rem;
+            margin-right: 0.1rem;
+          }
+          a {
+            color: #666666;
+            font-size: 0.12rem;
           }
         }
       }
     }
-    .driver {
-      .flex-column();
-      height: 1.3rem;
-       padding:0 0.12rem;
-      .drivertit2{
-       .drivertit();
-        .fjfw1{
-          .pstyle1();
-        
-        }
-      } 
-      .drivernews{
-        flex:2.5;
-        display: flex;
-        &>div:nth-child(1){
-          flex:1;
-          p{
-            .navmo();
-            text-indent:0.13rem;
-          }
-          &>p:nth-child(1){
-            margin-top:0.08rem;
-          }
-          &>p:nth-child(2){
-            margin-top:0.22rem;
-          }
-          &>p:nth-child(3){
-            margin-top:0.07rem;
-          }
-        }
-        &>div:nth-child(2){
-          flex:2.65;
-            .pone{
-              
-              margin-top:0.07rem;
-            }
-            p{
-              font-size:0.12rem;
-              font-weight: bold;
-            }
-          .driverphone{
-            margin:0.06rem 0 0.09rem 0;
-          }
-        }
-      }
+    .determine {
+      height: 0.39rem;
+      background-color: #f9c307;
+      line-height: 0.39rem;
+      font-size: 0.16rem;
+      color: white;
+      border-radius: 0.2rem;
+      text-align: center;
+      margin-top: 0.24rem;
     }
   }
 }
-  .delay {
-    animation-delay: 0.08s;
-  }
-  .delay1 {
-    animation-delay: 0.13s;
-  }
-  .delay2 {
-    animation-delay: 0.18s;
-  }
-  .delay3 {
-    animation-delay: 0.23s;
-  }
+.delay {
+  animation-delay: 0.08s;
+}
+.delay1 {
+  animation-delay: 0.13s;
+}
+.delay2 {
+  animation-delay: 0.18s;
+}
+.delay3 {
+  animation-delay: 0.23s;
+}
 </style>

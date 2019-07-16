@@ -5,6 +5,7 @@
         <div class="header">
             <router-link to class="back"></router-link>
           <span class="head">评价列表</span>
+           <span class="next"></span>
         </div>
       </div>
     </Public>
@@ -122,6 +123,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+*{
+    font-family:'PingFang-SC-Bold';
+}
+
 .hello {
   width: 100%;
   height: 100%;

@@ -21,7 +21,7 @@ export default {
     console.log(setRem);
     setRem.setRem();
     window.onresize= setRem.setRem;
-    this.$router.push('/HelloWorld');
+    this.$router.push('/Evaluation');
   }
   ,
     watch: {//使用watch 监听$router的变化
@@ -40,6 +40,7 @@ export default {
 
 <style>
 @import url('../static/css/common.css');
+	 @import "../node_modules/assert/font-size.css";
 #app {
   width:100%;
   height:100%;
@@ -48,6 +49,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
 .slide-right-enter-active,
 .slide-right-leave-active,
 .slide-left-enter-active,
