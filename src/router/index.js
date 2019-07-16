@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-<<<<<<< HEAD
-import HelloWorld from '@/components/HelloWorld'
+// import HelloWorld from '@/components/HelloWorld'
 import Guide from './../components/Xhh/guide.vue'//引导页
-=======
 
 
 import Carlist from '@/components/Zyb/thecarlist/carlist'
@@ -11,7 +9,14 @@ import Attestation from '@/components/Zyb/attescar/attestation'
 import Setting from '@/components/Zyb/setting/setting'
 import Locat from '@/components/Zyb/location/locat'
 import Shop from '@/components/Zyb/shop/shop'
-
+//首页侧边栏
+import Sidebar from '@/components/jqy/sidebar'
+//到店取车
+import Shopcar from "./../components/jqy/shopcar"
+//首页
+import Home from "@/components/jqy/home"
+//换车结算
+import Orderend from "./../components/jqy/returncar_"
 //充值页面
 import Recharge from './../page/Zmy/recharge/recharge.vue'
 //充值成功
@@ -38,7 +43,6 @@ import Zyshop from '@/components/Zyb/shop/2jpag/zyshop'
 
 
 
->>>>>>> 9ac0df025258c5c85939f2319c85f7590065f49d
 
 import Shaixuana from './../components/Xhh/shaixuana.vue'//价格筛选
 import Shaixuanb from './../components/Xhh/shaixuanb.vue'//车型筛选
@@ -51,7 +55,6 @@ export default new Router({
     //引导页
 
     {
-<<<<<<< HEAD
       path: '/',
       name: 'Guide',
       component: Guide
@@ -85,8 +88,7 @@ export default new Router({
   path: '/login',
   name: 'Login',
   component: Login
-},
-=======
+},{
       path: '/Carlist',
       name: 'Carlist',
       component: Carlist
@@ -167,7 +169,20 @@ export default new Router({
       path:'/wallet',
       name:'Wallet',
       component:Wallet
-    }
->>>>>>> 9ac0df025258c5c85939f2319c85f7590065f49d
+    },
+    {
+      path:'/orderend',
+      name:'Orderend',
+      component:Orderend
+    },
+    {
+      path: '/shopcar',
+      name: 'Shopcar',
+      component: Shopcar
+    }, {
+      path: '/home',
+      name: 'Home',
+      component: Home
+    },
   ]
 })

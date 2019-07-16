@@ -15,6 +15,12 @@ Vue.use(Vant);
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
+//引入地图组件
+import BaiduMap from 'vue-baidu-map'
+Vue.use(BaiduMap, {
+  ak: '0dWyNG1uG7vQLwHkhrj9m8Mf4P4UsCOt'
+})
+
 let store = new Vuex.Store({
   state:{
     num:500,
