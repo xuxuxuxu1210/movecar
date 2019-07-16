@@ -4,6 +4,14 @@ import Router from 'vue-router'
 import Guide from './../components/Xhh/guide.vue'//引导页
 
 
+import HelloWorld from '@/components/SGX/HelloWorld'//评论列表页
+import Index from '../components/SGX/index.vue'//全部评论页
+import Paysuccess from '../components/SGX/Paysuccess.vue'//支付完成待取车页
+import Orderdetails from '../components/SGX/Order-details.vue'//订单详情页
+import Orderinformation from '../components/SGX/orderinformation.vue' //订单信息页
+import Evaluation from '../components/SGX/evaluation.vue'//评价页
+
+
 import Carlist from '@/components/Zyb/thecarlist/carlist'
 import Attestation from '@/components/Zyb/attescar/attestation'
 import Setting from '@/components/Zyb/setting/setting'
@@ -51,9 +59,53 @@ import Login from './../components/Xhh/login.vue'//登录
 Vue.use(Router)
 
 export default new Router({
+  
   routes: [
-    //引导页
+    // {
+    //   path: '/',
+    //   name: 'HelloWorld',
+    //   component: HelloWorld
+    // }
+    // ,
+    {
+      path: '/HelloWorld',
+      name: 'HelloWorld',
+      meta: { index: 0 }, //
+      component: HelloWorld
+    },
 
+    ,
+    {
+      path:'/Index',
+      name:'Index',
+      meta: { index: 1 },
+      component:Index
+    },
+    {
+      path:'/Paysuccess',
+      name:'Paysuccess',
+      meta: { index: 2 },
+      component:Paysuccess
+    },
+    {
+      path:'/Orderdetails',
+      name:'Orderdetails',
+      meta: { index: 3 },
+      component:Orderdetails
+    },
+    {
+      path:'/Orderinformation',
+      name:'Orderinformation',
+      meta: { index: 4 },
+      component:Orderinformation
+    },
+    {
+      path:'/Evaluation',
+      name:'Evaluation',
+      meta: { index: 5 },
+      component:Evaluation
+    //引导页
+    },
     {
       path: '/',
       name: 'Guide',
