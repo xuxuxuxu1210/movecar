@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import Axios from "axios"
+Vue.prototype.axios = Axios
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 Vue.use(VueAwesomeSwiper, /* { default global options } */);
@@ -37,11 +39,18 @@ let store = new Vuex.Store({
 
 Vue.config.productionTip = false
 
+// su gui xi
+// import store from './store/store.js'
+import Animation from 'animate.css'
+Vue.use(Animation);
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  store,
+  // store,
   components: { App },
   template: '<App/>'
+  
 })
