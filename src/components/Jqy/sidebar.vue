@@ -1,5 +1,5 @@
 <template>
-  <div class="side-box" :class="{'ani':bol}" @touchstart="fn" >
+  <div class="side-box" :class="{'ani':bol}"  >
     <div class="side-content" >
       <!-- 用户信息 -->
       <div class="side-use">
@@ -17,34 +17,35 @@
       <div class="side-list">
         <ul>
           <li>
-            <router-link to="/sidebar">
+            <router-link to="/wallet">
               <img src="./sidebar-img/article_icon_1@2x.png" alt />
               钱包
             </router-link>
           </li>
           <li>
-            <router-link to="/sidebar">
+            <router-link to="/Orderdetails">
               <img src="./sidebar-img/crticle_icon_2@2x.png" alt />订单
             </router-link>
           </li>
           <li>
-            <router-link to="/sidebar">
+            <router-link to="/orderend">
               <img src="./sidebar-img/article_icon_3@2x.png" alt />行程
             </router-link>
           </li>
           <li>
-            <router-link to="/sidebar">
+            <router-link to="/Attestation">
               <img src="./sidebar-img/article_icon_4@2x.png" alt />驾驶证
             </router-link>
           </li>
           <li>
-            <router-link to="/sidebar">
+            <router-link to="/Setting">
               <img src="./sidebar-img/article_icon_5@2x.png" alt />设置
             </router-link>
           </li>
         </ul>
       </div>
     </div>
+    <div class="bg" @touchstart="fn"></div>
   </div>
 </template>
 
@@ -82,10 +83,16 @@ export default {
   left:-10rem;
   width:100%;
   height:100%;
-  background: rgba(117, 115, 115, 0.3);
   height: 100%;
-  z-index:999;
+  z-index:10;
+  display:flex;
+  .bg{
+    width:1.45rem;
+    height:100%;
+     background: rgba(117, 115, 115, 0.3);
+  }
   .side-content {
+    z-index:12;
     background: white;
     height: 100%;
     width: 2.3rem;

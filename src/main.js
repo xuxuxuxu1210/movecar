@@ -6,9 +6,10 @@ import router from './router'
 
 import Axios from "axios"
 Vue.prototype.axios = Axios
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
-Vue.use(VueAwesomeSwiper, /* { default global options } */);
+
+// import VueAwesomeSwiper from 'vue-awesome-swiper'
+// import 'swiper/dist/css/swiper.css'
+// Vue.use(VueAwesomeSwiper, /* { default global options } */);
 
 import Vant from 'vant';
 import 'vant/lib/index.css';
@@ -26,6 +27,7 @@ Vue.use(BaiduMap, {
 let store = new Vuex.Store({
   state:{
     num:500,
+    
   },
   mutations:{
     change(state,v){
@@ -49,7 +51,7 @@ Vue.use(Animation);
 new Vue({
   el: '#app',
   router,
-  // store,
+  store,
   components: { App },
   template: '<App/>'
   

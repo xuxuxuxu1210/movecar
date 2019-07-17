@@ -3,7 +3,7 @@
     <Public>
       <div class="big-box" slot="heade">
         <div class="header">
-          <router-link to='/Paysuccess' class="back">
+          <router-link to='/Home' class="back">
             <!-- <img src="../../../static/SGXimg/icon_back@2x.png" alt="" /> -->
           </router-link>
           <span class="head">订单详情</span>

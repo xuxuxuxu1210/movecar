@@ -13,7 +13,9 @@
 <span class="spimg"><img src="./../../image/xhh/密码@2x.png" alt=""></span>
 <span class="spinput"><input type="password" required placeholder="请输入您的密码"></span>
 </div>
+<router-link to="/home">
 <button>登录</button>
+</router-link>
 <p class="tp">
   <router-link to="/register">
   <span>注册账号</span>

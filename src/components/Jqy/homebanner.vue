@@ -51,17 +51,18 @@ export default {
 
 <style scoped lang='less'>
 .swiper-container{
+  width:100%;
     margin-top:0rem;
     height:1.13rem;
+  .swiper-slide,.swiper-slide-duplicate {
+    width:100%;
+  img{
+    width:3.75rem;
+    height:100%;
+  }
 }
 .swiper-pagination{
     top:-.1rem;
-}
-.swiper-slide {
-  width:100%;
-img{
-  width:100%;
-  height:100%;
 }
 }
 </style>

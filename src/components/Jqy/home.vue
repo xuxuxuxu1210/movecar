@@ -4,7 +4,10 @@
     <side></side>
     <map_></map_>
     <chosecar></chosecar>
+    <router-link to="/Carlist">
+
     <button_ text="去选车" class="posi_"></button_>
+    </router-link>
   </div>
 </template>
 <script>
@@ -13,7 +16,7 @@ import top from "./hometop";
 // 侧边栏
 import side from "./sidebar"
 //引入地图
-import map_ from "./map"
+import map_ from "./Map_"
 //引入选车组件
 import chosecar from "./chosecar"
 //引入按钮组件
@@ -40,6 +43,7 @@ export default {
 <style scoped lang='less'>
 div{
   height:100%;
+  // padding-top:.45rem;
 }
 .posi_{
   position:absolute;

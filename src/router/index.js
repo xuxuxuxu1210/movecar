@@ -60,45 +60,7 @@ Vue.use(Router)
 export default new Router({
 
   routes: [
-    {
-      path: '/HelloWorld',
-      name: 'HelloWorld',
-      meta: { index: 0 }, //
-      component: HelloWorld
-    },
-
-    ,
-    {
-      path: '/Index',
-      name: 'Index',
-      meta: { index: 1 },
-      component: Index
-    },
-    {
-      path: '/Paysuccess',
-      name: 'Paysuccess',
-      meta: { index: 2 },
-      component: Paysuccess
-    },
-    {
-      path: '/Orderdetails',
-      name: 'Orderdetails',
-      meta: { index: 3 },
-      component: Orderdetails
-    },
-    {
-      path: '/Orderinformation',
-      name: 'Orderinformation',
-      meta: { index: 4 },
-      component: Orderinformation
-    },
-    {
-      path: '/Evaluation',
-      name: 'Evaluation',
-      meta: { index: 5 },
-      component: Evaluation
-      //引导页
-    },
+    // XHH
     {
       path: '/',
       name: 'Guide',
@@ -109,6 +71,90 @@ export default new Router({
       name: 'Guide',
       component: Guide
     },
+     //注册
+     {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
+    //登录
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      component: Home
+    },
+
+    // ZMY
+     // 充值
+     {
+      path: '/recharge',
+      name: 'Recharge',
+      component: Recharge
+    },
+    // 充值成功
+    {
+      path: '/recharge_success',
+      name: 'Recharge_success',
+      component: Recharge_success
+    },
+    // 我的钱包
+    {
+      path: '/wallet',
+      name: 'Wallet',
+      component: Wallet
+    },
+
+    // SGX
+    // 评论
+    {
+      path: '/HelloWorld',
+      name: 'HelloWorld',
+      meta: { index: 0 }, //
+      component: HelloWorld
+    },
+    // 更多评论
+    // {
+    //   path: '/Index',
+    //   name: 'Index',
+    //   meta: { index: 1 },
+    //   component: Index
+    // },
+    // 支付完成
+    {
+      path: '/Paysuccess',
+      name: 'Paysuccess',
+      meta: { index: 2 },
+      component: Paysuccess
+    },
+    // 订单详情
+    {
+      path: '/Orderdetails',
+      name: 'Orderdetails',
+      meta: { index: 3 },
+      component: Orderdetails
+    },
+  // 待支付
+    {
+      path: '/Orderinformation',
+      name: 'Orderinformation',
+      meta: { index: 4 },
+      component: Orderinformation
+    },
+    // 信息评价
+    {
+      path: '/Evaluation',
+      name: 'Evaluation',
+      meta: { index: 5 },
+      component: Evaluation
+    },
+
+
+       
     //价格筛选
     {
       path: '/shaixuana',
@@ -122,61 +168,45 @@ export default new Router({
       name: 'Shaixuanb',
       component: Shaixuanb
     },
-    //注册
-    {
-      path: '/register',
-      name: 'Register',
-      component: Register
-    },
-    // //登录
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   component: Login
-    // },
+   
     //车型筛选
     {
       path: '/shaixuanb',
       name: 'Shaixuanb',
       component: Shaixuanb
     },
-    //注册
-    {
-      path: '/register',
-      name: 'Register',
-      component: Register
-    },
-    //登录
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
+   
+    // 车辆列表
     {
       path: '/Carlist',
       name: 'Carlist',
       component: Carlist
     },
+    // 驾驶证
     {
       path: '/Attestation',
       name: 'Attestation',
       component: Attestation
     },
+    // 设置
     {
       path: '/Setting',
       name: 'Setting',
       component: Setting
     },
+    // 城市
     {
       path: '/Locat',
       name: 'Locat',
       component: Locat
     },
+    // 门店列表
     {
       path: '/Shop',
       name: 'Shop',
       component: Shop,
       children: [
+        // 每个店
         {
           path: '/',
           name: '',
@@ -219,34 +249,17 @@ export default new Router({
         },
       ]
     },
-    {
-      path: '/recharge',
-      name: 'Recharge',
-      component: Recharge
-    },
-    {
-      path: '/recharge_success',
-      name: 'Recharge_success',
-      component: Recharge_success
-    },
-    {
-      path: '/wallet',
-      name: 'Wallet',
-      component: Wallet
-    },
+  //  订单结算
     {
       path: '/orderend',
       name: 'Orderend',
       component: Orderend
     },
+    // 到点取车
     {
       path: '/shopcar',
       name: 'Shopcar',
       component: Shopcar
-    }, {
-      path: '/home',
-      name: 'Home',
-      component: Home
-    },
+    }
   ]
 })

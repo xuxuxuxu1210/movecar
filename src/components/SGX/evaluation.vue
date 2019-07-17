@@ -78,13 +78,13 @@
           <p class="stores_three_div_one_p">
             <span>服务态度:</span>
            <ul class="star">
-              <li v-for="(itemClass,index) in itemClasses" :class="itemClass" class="star-item" @click="stars(index)" track-by="index"></li><!--性能优化 track-by 数据不改变时不会重新渲染-->
+              <li v-for="(itemClass,index) in itemClasses" :key="index" :class="itemClass" class="star-item" @click="stars(index)" track-by="index"></li><!--性能优化 track-by 数据不改变时不会重新渲染-->
             </ul>
           </p>
           <p class="stores_three_div_one_p">
             <span>服务态度:</span>
            <ul class="star">
-              <li v-for="(itemClass,index) in itemClasses" :class="itemClass" class="star-item" @click="stars1(index)" track-by="index"></li><!--性能优化 track-by 数据不改变时不会重新渲染-->
+              <li v-for="(itemClass,index) in itemClasses" :key="index" :class="itemClass" class="star-item" @click="stars1(index)" track-by="index"></li><!--性能优化 track-by 数据不改变时不会重新渲染-->
             </ul>
           </p>
           <p class="stores_three_div_two_p"></p>
@@ -92,7 +92,9 @@
       </li>
       <li class="published animated bounceInUp delay3 faster">
         <div><span></span><span>匿名发表评论</span></div>
-        <div>发表评论</div>
+       
+        <div> <router-link to='/HelloWorld'>发表评论</router-link></div>
+        
       </li>
     </ul>
   </div>

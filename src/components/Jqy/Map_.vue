@@ -1,3 +1,4 @@
+
 <template>
   <div class="map-box">
       <baidu-map class="bm-view" :center="center" :zoom="zoom" @ready="handler">

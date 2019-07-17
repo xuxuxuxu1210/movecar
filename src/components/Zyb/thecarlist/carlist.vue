@@ -5,7 +5,9 @@
         <img src="../image/nav_touxiang@2x.png" alt />
       </span>
       <span class="head">选择车型</span>
+      <router-link to="/shaixuana">
       <span class="screen">筛选</span>
+      </router-link>
     </div>
 
     <ul class="car">
