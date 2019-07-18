@@ -11,6 +11,8 @@ Vue.prototype.axios = Axios
 // import 'swiper/dist/css/swiper.css'
 // Vue.use(VueAwesomeSwiper, /* { default global options } */);
 
+
+
 import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);

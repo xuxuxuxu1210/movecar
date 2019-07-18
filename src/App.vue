@@ -40,7 +40,7 @@ export default {
 
 <style>
 @import url("../static/css/common.css");
-@import "../node_modules/assert/font-size.css";
+/* @import "../node_modules/assert/font-size.css"; */
 #app {
   width: 100%;
   height: 100%;
