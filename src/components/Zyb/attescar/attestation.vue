@@ -63,16 +63,17 @@ export default {
   .driving {
     background: #f7f8fa;
     height: 100%;
+    padding-left: 0.13rem;
     h1 {
       font-size: 0.14rem;
       color: rgb(153, 153, 153);
-      padding-top: 0.43rem;
+      padding: 0.43rem 0 0 0.13rem;
     }
     h2 {
       background: #fff;
       width: 2.38rem;
       height: 1.65rem;
-      margin: 0.15rem 0.78rem;
+      margin: 0.15rem 0.57rem;
       position: relative;
       border-radius: 0.1rem;
       img {
@@ -85,6 +86,7 @@ export default {
     }
     .putin {
       margin-top: 1.24rem;
+      
       width: 3.43rem;
       height: 0.44rem;
       background-color: #f9c307;

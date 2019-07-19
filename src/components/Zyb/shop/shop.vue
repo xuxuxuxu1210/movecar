@@ -13,7 +13,9 @@
     <!-- 用车城市 -->
     <div class="orientation">
       <p>用车城市</p>
-      <a href="#">郑州 ></a>
+      <router-link to="/mendian">
+        郑州
+      </router-link>
     </div>
     <!-- 区域 -->
     <div class="area">

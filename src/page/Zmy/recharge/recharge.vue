@@ -5,11 +5,19 @@
         <img src="./../img/icon_back@2x.png" />
       </router-link>
     </Header>
-    <div>
-        <div>
-            <p>
-              <img src="./1.png" />送100积分
-            </p>
+    <div class="swiper-container lunbo">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide lia">
+          <p>2000平驾币</p>
+          <p>
+            <img src="./1.png" />送300积分
+          </p>
+        </div>
+        <div class="swiper-slide lib">
+          <p>1000平驾币</p>
+          <p>
+            <img src="./1.png" />送100积分
+          </p>
         </div>
         <div class="swiper-slide lic">
           <p>3000平驾币</p>
@@ -24,6 +32,7 @@
           </p>
         </div>
       </div>
+    </div>
     <div class="text">1积分=1元,每单最高可使用积分冲抵40%的租车费用</div>
     <div class="cen">
       <ul>
@@ -35,7 +44,7 @@
           <p>30%首选</p>
           <p>{{num2}}</p>
         </li>
-        <li>
+        <li @click="fn2()">
           <p>55%首选</p>
           <p>{{num3}}</p>
           <div class="tj">推荐</div>
@@ -64,16 +73,16 @@
         >同意平驾分时租车租赁协议</van-checkbox>
       </p>
     </div>
-  <div>
     <router-link to="/recharge_success">
       <Foot text="确认支付"></Foot>
     </router-link>
   </div>
-  </div>
 </template>
 <script src='./jquery-3.4.0.min.js'></script>
 <script>
-// import Swiper from "swiper";
+</script>
+<script>
+import Swiper from "swiper";
 import Header from "./../../../components/Zmy/head/head";
 import jquery from "./jquery-3.4.0.min.js";
 import Foot from "./../../../components/Zmy/foot";
@@ -83,18 +92,9 @@ export default {
     return {
       checked: true,
       c_color: false,
-      num1:200,
-      num2:300,
-      num3:500,
-       swiperOption: {
-      
-         autoplay:{
-           delay:this.delay,
-           disableOnInteraction: false,
-         },
-         loop: true,
-        effect:this.effect,
-      }
+      num1: 200,
+      num2: 300,
+      num3: 500
     };
   },
   methods: {
@@ -117,30 +117,7 @@ export default {
     Header,
     Foot
   },
-  props:{
-    bol:{
-      type:Boolean,
-      default:true,
-    },
-    effect:{
-      type:String,
-      default:"slide"
-    },
-    delay:{
-      type:Number,
-      default:2000
-    }
-  },
-
   mounted() {
-    // var mySwiper = new Swiper(".lunbo", {
-    //   direction: "horizontal", // 垂直切换选项
-    //   loop: true, // 循环模式选项
-    //   autoplay: 5000,
-    //   slidesPerView: "auto",
-    //   centeredSlides: true,
-    //   spaceBetween: 16
-    // });
     var mySwiper = new Swiper(".lunbo", {
       direction: "horizontal", // 垂直切换选项
       loop: true, // 循环模式选项
@@ -159,6 +136,7 @@ export default {
   }
 };
 </script>
+
 <style scoped lang='less'>
 .re {
   text-align: center;
@@ -185,48 +163,6 @@ export default {
           }
         }
       }
-    }
-  }
-  .lia {
-      width: 2.26rem;
-    height: 1.17rem;
-    background: #f9c307;
-  }
-  .lib {
-    background: #33ccff;
-  }
-  .lic {
-    background: yellowgreen;
-  }
-  .lid {
-    background: #f55378;
-  }
-}
-.text {
-  font-size: 0.14rem;
-  color: #333333;
-  padding: 0 0.53rem 0 0.57rem;
-  font-weight: bold;
-  font-family: PingFang-SC-Bold;
-  text-align: left;
-}
-.cen {
-  padding: 0.27rem 0.16rem 0.25rem 0.16rem;
-  width: 100%;
-  ul {
-    display: flex;
-    flex-direction: row;
-    li {
-      flex-direction: column;
-      justify-content: space-between;
-      width: 0.92rem;
-      height: 1.21rem;
-      border: 1px solid #999999;
-      border-radius: 0.05rem;
-      font-size: 0.12rem;
-      color: #333333;
-      p:nth-child(1) {
-        margin-top: 0.25rem;
       .lia {
         background: #f9c307;
       }
@@ -331,6 +267,5 @@ export default {
       }
     }
   }
- }
 }
 </style>
