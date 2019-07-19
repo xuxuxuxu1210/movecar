@@ -3,11 +3,6 @@
     <top class="home-top_"></top>
     <side></side>
     <map_></map_>
-    <chosecar></chosecar>
-    <router-link to="/Carlist">
-
-    <button_ text="去选车" class="posi_"></button_>
-    </router-link>
   </div>
 </template>
 <script>
@@ -17,25 +12,21 @@ import top from "./hometop";
 import side from "./sidebar"
 //引入地图
 import map_ from "./Map_"
-//引入选车组件
-import chosecar from "./chosecar"
-//引入按钮组件
-import button_ from "./button"
+
 export default {
   data() {
     return {
-      bol:''
+      bol:'',
     };
   },
   methods: {
    
   },
+
   components: {
     top,
     side,
     map_,
-    chosecar,
-    button_,
   }
 };
 </script >
@@ -43,12 +34,11 @@ export default {
 <style scoped lang='less'>
 div{
   height:100%;
-  // padding-top:.45rem;
 }
 .posi_{
   position:absolute;
   bottom:.13rem;
-  left:.65rem;
+  left:.5rem;
   width:2.45rem;
 }
 </style>

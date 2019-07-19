@@ -2,19 +2,23 @@
   <div class="big-box">
     <div class="header">
       <span class="back">
-        <img src="../image/nav_touxiang@2x.png" alt />
+        <router-link to="/Home">
+        <img src="../image/nav-icon@2x.png" alt />
+        </router-link>
       </span>
       <span class="head">选择车型</span>
       <router-link to="/shaixuana">
-      <span class="screen">筛选</span>
+        <span class="screen">筛选</span>
       </router-link>
     </div>
 
     <ul class="car">
       <li class="listcar">
-        <img src="../image/car_jinke@2x.png" alt class="leftcar" />
+        <router-link to="/shopcar">
+          <img src="../image/car_lanniao@2x.png" alt class="leftcar" />
+        </router-link>
         <div class="rightcar">
-          <h1>东风日产奇骏</h1>
+          <h1>东风日产蓝鸟</h1>
           <h2>1.6L自动 | 两箱5座</h2>
           <h3></h3>
           <h4>
@@ -26,8 +30,112 @@
           </h5>
         </div>
       </li>
+      <li class="listcar">
+        <img src="../image/car_tianlai@2x.png" alt class="leftcar" />
+        <div class="rightcar">
+          <h1>东风日产天籁</h1>
+          <h2>2.0L自动 | 两箱5座</h2>
+          <h3></h3>
+          <h4>
+            <span>109元</span> /日均
+          </h4>
+          <h5>
+            <i>自动取还</i>
+            <i>每日租金</i>
+          </h5>
+        </div>
+      </li>
+      <li class="listcar">
+        <img src="../image/car_xuanyi@2x.png" alt class="leftcar" />
+        <div class="rightcar">
+          <h1>东风日产轩逸</h1>
+          <h2>3.0L自动 | 两箱7座</h2>
+          <h3></h3>
+          <h4>
+            <span>299元</span> /日均
+          </h4>
+          <h5>
+            <i>自动取还</i>
+            <i>每日租金</i>
+          </h5>
+        </div>
+      </li>
+      <li class="listcar">
+        <img src="../image/car_jinke@2x.png" alt class="leftcar" />
+        <div class="rightcar">
+          <h1>东风日产逍客</h1>
+          <h2>1.5T自动 | 两箱5座</h2>
+          <h3></h3>
+          <h4>
+            <span>199元</span> /日均
+          </h4>
+          <h5>
+            <i>自动取还</i>
+            <i>每日租金</i>
+          </h5>
+        </div>
+      </li>
+      <li class="listcar">
+        <img src="../image/car_lanniao@2x.png" alt class="leftcar" />
+        <div class="rightcar">
+          <h1>东风日产蓝鸟</h1>
+          <h2>1.6L自动 | 两箱5座</h2>
+          <h3></h3>
+          <h4>
+            <span>99元</span> /日均
+          </h4>
+          <h5>
+            <i>自动取还</i>
+            <i>每日租金</i>
+          </h5>
+        </div>
+      </li>
+      <li class="listcar">
+        <img src="../image/car_tianlai@2x.png" alt class="leftcar" />
+        <div class="rightcar">
+          <h1>东风日产天籁</h1>
+          <h2>2.0L自动 | 两箱5座</h2>
+          <h3></h3>
+          <h4>
+            <span>109元</span> /日均
+          </h4>
+          <h5>
+            <i>自动取还</i>
+            <i>每日租金</i>
+          </h5>
+        </div>
+      </li>
+      <li class="listcar">
+        <img src="../image/car_xuanyi@2x.png" alt class="leftcar" />
+        <div class="rightcar">
+          <h1>东风日产轩逸</h1>
+          <h2>3.0L自动 | 两箱7座</h2>
+          <h3></h3>
+          <h4>
+            <span>299元</span> /日均
+          </h4>
+          <h5>
+            <i>自动取还</i>
+            <i>每日租金</i>
+          </h5>
+        </div>
+      </li>
+      <li class="listcar">
+        <img src="../image/car_jinke@2x.png" alt class="leftcar" />
+        <div class="rightcar">
+          <h1>东风日产逍客</h1>
+          <h2>1.5T自动 | 两箱5座</h2>
+          <h3></h3>
+          <h4>
+            <span>199元</span> /日均
+          </h4>
+          <h5>
+            <i>自动取还</i>
+            <i>每日租金</i>
+          </h5>
+        </div>
+      </li>
     </ul>
-
 
     <div class="carbox">我也是有底线的~</div>
   </div>
@@ -63,9 +171,8 @@ export default {
       width: 0.38rem;
       height: 100%;
       img {
-        margin-left: 0.16rem;
-        width: 0.38rem;
-        height: 0.38rem;
+         width: 0.09rem;
+        height: 0.16rem;
       }
     }
     .head {
@@ -81,7 +188,6 @@ export default {
       top: 0.3rem;
       font-size: 0.12rem;
       color: #fff;
-      
     }
   }
   .car {
@@ -113,21 +219,21 @@ export default {
           border-bottom: 1px solid #ccc;
           margin: 0.08rem 0 0.12rem 0;
         }
-        h4{
+        h4 {
           font-size: 0.12rem;
           color: #999;
           padding-bottom: 0.08rem;
-          span{
+          span {
             height: 0.15rem;
-            color: #FB8C00;
+            color: #fb8c00;
           }
         }
-        h5{
-          font-size: 0.10rem;
+        h5 {
+          font-size: 0.1rem;
           height: 0.15rem;
           color: #fff;
-          i{
-            background: #FB8C00;
+          i {
+            background: #fb8c00;
             padding: 0.02rem 0.06rem;
             border-radius: 7px;
           }
@@ -135,12 +241,11 @@ export default {
       }
     }
   }
-  .carbox{
+  .carbox {
     font-size: 0.1rem;
-    color:#999;
+    color: #999;
     background: #f7f8fa;
     height: 0.34rem;
-
   }
 }
 </style>

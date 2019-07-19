@@ -10,7 +10,7 @@
       </span>
       <span class="sum">订单结算 </span>
     </div>
-    <router-link to="/sidebar"><img src="./top-img/nav_icon_1@2x.png"  class="top-right"></router-link>   
+    <router-link to="/Shop"><img src="./top-img/nav_icon_1@2x.png"  class="top-right"></router-link>   
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     show(){
-      console.log(this.bol)
+        console.log(this.bol)
         Bus.$emit('priceChange',this.bol) 
     }
   },

@@ -68,6 +68,7 @@ export default {
         },
   methods: {
     fn(){
+      console.log("1")
       this.bol=''
     }
   },
@@ -96,6 +97,8 @@ export default {
     background: white;
     height: 100%;
     width: 2.3rem;
+    z-index:10;
+    
     .side-use {
       box-sizing: border-box;
       width: 1.57rem;

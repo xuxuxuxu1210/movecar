@@ -2,7 +2,9 @@
   <div class="big-box">
     <div class="header">
       <span class="back">
+        <router-link to="/home">
         <img src="../image/nav-icon@2x.png" alt />
+        </router-link>
       </span>
       <span class="head">
         <input type="text" placeholder="请输入地址寻找门店" />
@@ -11,7 +13,9 @@
     <!-- 用车城市 -->
     <div class="orientation">
       <p>用车城市</p>
-      <a href="#">郑州 ></a>
+      <router-link to="/mendian">
+        郑州
+      </router-link>
     </div>
     <!-- 区域 -->
     <div class="area">

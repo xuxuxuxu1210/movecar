@@ -11,9 +11,19 @@ Vue.prototype.$qs = qs;
 
 
 
+
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(MintUI)
+
+
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import 'swiper/dist/css/swiper.css'
 // Vue.use(VueAwesomeSwiper, /* { default global options } */);
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */ );
 
 
 
@@ -31,17 +41,31 @@ Vue.use(BaiduMap, {
 })
 
 let store = new Vuex.Store({
-  state:{
-    num:500,
-    
+  state: {
+    num: 500,
+    speedday_: 1,
+    beginnow: '',
+    endfuture: '',
   },
-  mutations:{
-    change(state,v){
+  mutations: {
+    change(state, v) {
       state.num = v;
     },
-    changes(state,a){
+    changes(state, a) {
       state.num = a;
-    }
+    },
+    //租车天数
+    speedday_(state, date) {
+      state.speedday_ = date;
+    },
+    //租车开始时间
+    beginnow(state, date) {
+      state.beginnow = date;
+    },
+    //租车结束时间
+    endfuture(state, date) {
+      state.endfuture = date;
+    },
   }
 })
 
@@ -58,7 +82,9 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
-  
+
 })

@@ -4,7 +4,6 @@
 <baidu-map class="bm-view" :center="center" :zoom="zoom" @ready="handler"  >
      <bm-navigation anchor="BMAP_ANCHOR_TOP_LEFT"></bm-navigation>
     <bm-traffic :predictDate="{weekday: 7, hour: 12}"></bm-traffic>
-    <bm-traffic :predictDate="{weekday: 7, hour: 12}"></bm-traffic>
      <bm-geolocation anchor="BMAP_ANCHOR_TOP_RIGHT" :showAddressBar="true" :autoLocation="true"></bm-geolocation> 
     <bm-driving
       :start='start'
@@ -25,15 +24,17 @@
 import top_ from "./hometop"
 import orderspeed from "./orderspeed"
 import button_ from "./button"
+
 export default {
    data () {
     return {
       center: {lng: 0, lat: 0},
       zoom: 3, 
-      start:"关虎屯",
-      end:"秦岭路"
+      start:"红专路",
+      end:"东风路"
     }
   },
+ 
   methods: {
  handler ({BMap, map}) {
       this.center.lng = 113.62 

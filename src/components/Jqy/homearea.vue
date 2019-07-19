@@ -73,6 +73,7 @@ fn(){
                 font-size:.14rem;
                 color:#333;
                 margin-bottom:.04rem;
+                text-align: left;
             }
             span{
                 display:inline-block;

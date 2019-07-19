@@ -2,9 +2,11 @@
   <div class="big-box">
     <div class="header">
       <span class="back">
-        <img src="../image/nav-icon@2x.png" alt />
+        <router-link to="/Home">
+          <img src="../image/nav-icon@2x.png" alt />
+        </router-link>
       </span>
-      <span class="head">评价列表</span>
+      <span class="head">驾驶证</span>
     </div>
     <div class="driving">
       <h1>请按图示上传驾照（正、负页）照片</h1>
@@ -31,9 +33,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-
 .big-box {
- 
   .header {
     width: 100%;
     height: 0.45rem;
@@ -63,16 +63,17 @@ export default {
   .driving {
     background: #f7f8fa;
     height: 100%;
+    padding-left: 0.13rem;
     h1 {
       font-size: 0.14rem;
       color: rgb(153, 153, 153);
-      padding-top: 0.43rem;
+      padding: 0.43rem 0 0 0.13rem;
     }
     h2 {
       background: #fff;
       width: 2.38rem;
       height: 1.65rem;
-      margin: 0.15rem 0.78rem;
+      margin: 0.15rem 0.57rem;
       position: relative;
       border-radius: 0.1rem;
       img {
@@ -85,6 +86,7 @@ export default {
     }
     .putin {
       margin-top: 1.24rem;
+      
       width: 3.43rem;
       height: 0.44rem;
       background-color: #f9c307;
