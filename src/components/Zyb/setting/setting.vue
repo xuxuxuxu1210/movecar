@@ -2,7 +2,9 @@
   <div class="big-box">
     <div class="header">
       <span class="back">
+        <router-link to="/Home">
         <img src="../image/nav-icon@2x.png" alt />
+        </router-link>
       </span>
       <span class="head">设置</span>
     </div>
@@ -10,7 +12,7 @@
       <p>设置支付密码 <a href="#">></a></p>
       <p>关于我们 <a href="#">></a></p>
       <p>隐私声明 <a href="#">></a></p>
-      <input type="button" value="提交" class="putin" />
+      
     </div>
   </div>
 </template>

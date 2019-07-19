@@ -21,7 +21,7 @@ export default {
     console.log(setRem);
     setRem.setRem();
     window.onresize= setRem.setRem;
-    this.$router.push('/Evaluation');
+    this.$router.push('/Mendian');
   },
   watch: {
     //使用watch 监听$router的变化
@@ -40,7 +40,7 @@ export default {
 
 <style>
 @import url("../static/css/common.css");
-@import "../node_modules/assert/font-size.css";
+/* @import "../node_modules/assert/font-size.css"; */
 #app {
   width: 100%;
   height: 100%;
