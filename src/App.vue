@@ -21,7 +21,7 @@ export default {
     console.log(setRem);
     setRem.setRem();
     window.onresize= setRem.setRem;
-    this.$router.push('/Evaluation');
+    this.$router.push('/guide');
   },
   watch: {
     //使用watch 监听$router的变化

@@ -2,7 +2,9 @@
   <div class="big-box">
     <div class="header">
       <span class="back">
-        <img src="../image/nav_touxiang@2x.png" alt />
+        <router-link to="/Home">
+        <img src="../image/nav-icon@2x.png" alt />
+        </router-link>
       </span>
       <span class="head">选择车型</span>
       <router-link to="/shaixuana">
@@ -12,7 +14,9 @@
 
     <ul class="car">
       <li class="listcar">
+        <router-link to="/shopcar">
         <img src="../image/car_jinke@2x.png" alt class="leftcar" />
+        </router-link>
         <div class="rightcar">
           <h1>东风日产奇骏</h1>
           <h2>1.6L自动 | 两箱5座</h2>

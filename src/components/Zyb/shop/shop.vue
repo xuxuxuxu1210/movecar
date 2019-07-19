@@ -2,7 +2,9 @@
   <div class="big-box">
     <div class="header">
       <span class="back">
+        <router-link to="/home">
         <img src="../image/nav-icon@2x.png" alt />
+        </router-link>
       </span>
       <span class="head">
         <input type="text" placeholder="请输入地址寻找门店" />

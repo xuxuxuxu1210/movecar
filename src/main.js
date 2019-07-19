@@ -7,9 +7,9 @@ import router from './router'
 import Axios from "axios"
 Vue.prototype.axios = Axios
 
-// import VueAwesomeSwiper from 'vue-awesome-swiper'
-// import 'swiper/dist/css/swiper.css'
-// Vue.use(VueAwesomeSwiper, /* { default global options } */);
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */);
 
 
 
