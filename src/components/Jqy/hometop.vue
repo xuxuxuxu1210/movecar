@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     show(){
-      console.log(this.bol)
+        console.log(this.bol)
         Bus.$emit('priceChange',this.bol) 
     }
   },

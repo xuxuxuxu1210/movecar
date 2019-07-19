@@ -25,7 +25,10 @@ Vue.use(BaiduMap, {
 
 let store = new Vuex.Store({
   state:{
-    num:500,
+    num: 500,
+    speedday_: '',
+    beginnow: '',
+    endfuture:'',
   },
   mutations:{
     change(state,v){
@@ -33,7 +36,19 @@ let store = new Vuex.Store({
     },
     changes(state,a){
       state.num = a;
-    }
+    },
+    //租车天数
+   speedday_(state,date) {
+     state.speedday_ = date;
+    },
+    //租车开始时间
+   beginnow(state, date) {
+     state.beginnow = date;
+    },
+    //租车结束时间
+   endfuture(state, date) {
+     state.endfuture = date;
+    },
   }
 })
 
@@ -49,7 +64,7 @@ Vue.use(Animation);
 new Vue({
   el: '#app',
   router,
-  // store,
+  store,
   components: { App },
   template: '<App/>'
   

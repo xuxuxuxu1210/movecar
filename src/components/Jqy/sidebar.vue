@@ -1,6 +1,6 @@
 <template>
-  <div class="side-box" :class="{'ani':bol}" @touchstart="fn" >
-    <div class="side-content" >
+  <div class="side-box" :class="{'ani':bol}"  >
+    <div class="side-content">
       <!-- 用户信息 -->
       <div class="side-use">
         <img src="./../jqy/sidebar-img/touxiang@2x.png" alt />
@@ -16,8 +16,8 @@
       <!-- 列表 -->
       <div class="side-list">
         <ul>
-          <li>
-            <router-link to="/sidebar">
+          <li >
+            <router-link to="/orderend">
               <img src="./sidebar-img/article_icon_1@2x.png" alt />
               钱包
             </router-link>
@@ -45,6 +45,7 @@
         </ul>
       </div>
     </div>
+    <div class="bg" @touchstart="fn"></div>
   </div>
 </template>
 
@@ -67,6 +68,7 @@ export default {
         },
   methods: {
     fn(){
+      console.log("1")
       this.bol=''
     }
   },
@@ -82,13 +84,20 @@ export default {
   left:-10rem;
   width:100%;
   height:100%;
-  background: rgba(117, 115, 115, 0.3);
+  display:flex;
   height: 100%;
-  z-index:999;
+  z-index:12;
+  .bg{
+  width:1.45rem;
+  height:100%;
+  background: rgba(117, 115, 115, 0.3);
+  }
   .side-content {
     background: white;
     height: 100%;
     width: 2.3rem;
+    z-index:10;
+    
     .side-use {
       box-sizing: border-box;
       width: 1.57rem;

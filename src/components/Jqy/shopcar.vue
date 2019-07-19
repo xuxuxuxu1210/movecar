@@ -7,7 +7,7 @@
 <local region="郑州" district='郑州动物动物园自助点' remark='该门店仅支持自助取车' class="shopone"></local>
 </router-link>
 <router-link to="/home">
-<local region="郑州" district='郑州动物动物园自助点' remark='该门店仅支持自助取车' class="border-line"></local>
+<local region="郑州" district='二七广场自助点' remark='该门店仅支持自助取车' class="border-line"></local>
 </router-link>
 <time_></time_>
 <button_ text="立即选车"></button_>

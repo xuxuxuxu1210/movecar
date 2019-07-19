@@ -5,26 +5,15 @@
         <img src="./../img/icon_back@2x.png" />
       </router-link>      
     </Header>
-    <div class="swiper-container lunbo">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide lia">
-          <p>2000平驾币</p>
-          <p><img src="./1.png">送300积分</p>
-        </div>
-        <div class="swiper-slide lib">
-          <p>1000平驾币</p>
-          <p><img src="./1.png">送100积分</p>
-        </div>
-        <div class="swiper-slide lic">
-          <p>3000平驾币</p>
-          <p><img src="./1.png">送400积分</p>
-        </div>
-        <div class="swiper-slide lid">
-          <p>5000平驾币</p>
-          <p><img src="./1.png">送600积分</p>
-        </div>
-      </div>
-    </div>
+    <swiper :options="swiperOption">
+      <!-- swiper-slides -->
+      <!-- <slot name="swiper-img"></slot> -->
+    <swiper-slide class="lia">1></swiper-slide>
+    <swiper-slide class="lib">2</swiper-slide>
+    <swiper-slide class="lic">3</swiper-slide>
+    <swiper-slide class="lid">4</swiper-slide>
+      <!-- <div :class="{'swiper-pagination':bol}" slot="pagination"></div> -->
+    </swiper>
     <div class="text">1积分=1元,每单最高可使用积分冲抵40%的租车费用</div>
     <div class="cen">
       <ul>
@@ -73,7 +62,7 @@
 <script>
 </script>
 <script>
-import Swiper from "swiper";
+// import Swiper from "swiper";
 import Header from "./../../../components/Zmy/head/head";
 import jquery from "./jquery-3.4.0.min.js";
 import Foot from './../../../components/Zmy/foot'
@@ -86,6 +75,16 @@ export default {
       num1:200,
       num2:300,
       num3:500,
+       swiperOption: {
+      
+         autoplay:{
+           delay:this.delay,
+           disableOnInteraction: false,
+         },
+         loop: true,
+        effect:this.effect,
+      }
+   
     };
   },
   methods: {
@@ -108,15 +107,30 @@ export default {
     Header,
     Foot
   },
+  props:{
+    bol:{
+      type:Boolean,
+      default:true,
+    },
+    effect:{
+      type:String,
+      default:"slide"
+    },
+    delay:{
+      type:Number,
+      default:2000
+    }
+  },
+
   mounted() {
-    var mySwiper = new Swiper(".lunbo", {
-      direction: "horizontal", // 垂直切换选项
-      loop: true, // 循环模式选项
-      autoplay: 5000,
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 16
-    });
+    // var mySwiper = new Swiper(".lunbo", {
+    //   direction: "horizontal", // 垂直切换选项
+    //   loop: true, // 循环模式选项
+    //   autoplay: 5000,
+    //   slidesPerView: "auto",
+    //   centeredSlides: true,
+    //   spaceBetween: 16
+    // });
     $(function() {
       $(".cen li").on("click", function() {
         $(this).toggleClass("cor");
@@ -150,6 +164,8 @@ export default {
     }
   }
   .lia {
+      width: 2.26rem;
+    height: 1.17rem;
     background: #f9c307;
   }
   .lib {

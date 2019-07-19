@@ -9,20 +9,21 @@
           <p><span>郑州</span> 二七广场店</p>
         </div>
         <div class="time">
-            <p>7月8号</p>
-            <p>7月8号</p>
+            <p>{{$store.state.beginnow}}</p>
+        <span>{{$store.state.speedday_}}</span>
+            <p>{{$store.state.endfuture}}</p>
         </div>
         <div class="speed">
-                <p>订单金额： <span>￥128</span></p>
+                <p>订单金额： <span>￥{{($store.state.speedday_.split("")[0]-0)*128}}</span></p>
         </div>
   </div>
 </template>
-
 <script>
+
 export default {
   data() {
     return {
-
+            speedday_ :''   
     }
   },
   methods: {
