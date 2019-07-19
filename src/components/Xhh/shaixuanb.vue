@@ -1,9 +1,11 @@
 <template>
   <div class="shaixuanb">
     <div class="header">
+       <router-link to="/carlist">
       <span class="back">
         <img src="./../../image/xhh/icon_back@2x.png" alt />
       </span>
+       </router-link>
       <span class="head">筛选</span>
       <span class="heada">取消</span>
     </div>
@@ -21,9 +23,11 @@
           v-show="ind == numbe?false:true"></span>
         </li>
         </ul>
+         <router-link to="/carlist">
     <div class="button">
     <button>确定</button>
     </div>
+     </router-link>
   </div>
 </template>
 

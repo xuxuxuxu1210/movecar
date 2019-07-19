@@ -5,6 +5,7 @@
     <img src="./../../image/xhh/图层2@2x.png" alt="">
 </div>
 <div class="box">
+  <form action="http://172.25.1.175:8080/user/login" method="post">
   <div class="input">
 <span class="spimg"><img src="./../../image/xhh/个人@2x.png" alt=""></span>
 <span class="spinput"><input type="text" required placeholder="请输入您的帐号"></span>
@@ -13,7 +14,11 @@
 <span class="spimg"><img src="./../../image/xhh/密码@2x.png" alt=""></span>
 <span class="spinput"><input type="password" required placeholder="请输入您的密码"></span>
 </div>
-<button>登录</button>
+
+<router-link to="/home">
+<input type="submit" value="登录" class="button">
+</router-link>
+</form>
 <p class="tp">
   <router-link to="/register">
   <span>注册账号</span>
@@ -32,6 +37,7 @@
 </footer>
 </div>
   </div>
+
   </div>
 </template>
 
@@ -71,6 +77,7 @@ export default {
     background:rgba(255,255,255,1);
     box-shadow:0px 5px 20px 0px rgba(223,223,223,0.91);
     border-radius:20px;
+    form{
         .input{
             width:3.19rem;
             height:.5rem;
@@ -84,7 +91,7 @@ export default {
               height:.2rem;
               margin-top:.16rem;
               margin-left:.12rem;
-              font-size:0;
+              font-size:.14rem;
               
               img{
                 width:100%;
@@ -92,10 +99,10 @@ export default {
               }
             }
             .spinput{
-            display: inline-block;
+            display: block;
             width:2.72rem;
             height:.5rem;
-            font-size: 0;
+            font-size: .14rem;
             float:right;
             input{
               width:100%;
@@ -110,14 +117,14 @@ export default {
                font-weight:400;
                background:rgba(245,245,245,1);
                color:rgba(153,153,153,1);
-               line-height:14px;
+               line-height:.14rem;
                
         }
     }
     .inputa{
       margin-top:.16rem;
     }
-    button{
+    .button{
       border:none;
        margin-top:.34rem;
         width:3.19rem;
@@ -127,6 +134,7 @@ export default {
         font-weight:bold;
         font-size:.16rem;
         border-radius:23px;
+    }
     }
     .tp{
       margin-top:.38rem;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="res">
     <Header txt="充值">
       <router-link to='/recharge' slot="left" class="left">
         <img src="./../img/icon_back@2x.png"/>
@@ -15,7 +15,10 @@
       <p>{{ $store.state.num }}</p>
       <p>获得{{ $store.state.num }}积分</p>
     </div>
-    <Foot text='去租车吧'></Foot>
+    <router-link to='/Carlist'>
+      <Foot text='去租车吧'></Foot>
+    </router-link>
+    
   </div>
 </template>
 
@@ -37,7 +40,9 @@ export default {
 </script>
 
 <style scoped lang='less'>
-.pic{
+.res{
+  text-align: center;
+  .pic{
   width: 100%;
   height: 2.19rem;
   background: #F9C307;
@@ -76,6 +81,9 @@ export default {
     font-size: .12rem;
     color:#333333;
   }
+}
+
+
 }
 
 </style>

@@ -1,4 +1,6 @@
 <template>
+<div>
+      <sidebar></sidebar>
   <div class="order-speed">
         <div class="area">
             <p><span></span> 取车地点</p>
@@ -17,9 +19,10 @@
                 <p>订单金额： <span>￥{{($store.state.speedday_.split("")[0]-0)*128}}</span></p>
         </div>
   </div>
+  </div>
 </template>
 <script>
-
+import sidebar from "./sidebar"
 export default {
   data() {
     return {
@@ -30,12 +33,13 @@ export default {
 
   },
   components: {
-
+sidebar
   }
 }
 </script >
 
 <style scoped lang='less'>
+
 .order-speed{
     width:3.42rem;
     height:1.84rem;

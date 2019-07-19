@@ -110,7 +110,9 @@
           </p>
         </div>
       </li>
+      <router-link to='/Paysuccess'>
       <li class="determine" @click="determine()">支付</li>
+      </router-link>
     </ul>
   </div>
 </template>

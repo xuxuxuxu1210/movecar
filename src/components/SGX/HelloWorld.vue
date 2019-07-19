@@ -3,7 +3,7 @@
     <Public>
       <div class="big-box" slot="heade">
         <div class="header">
-            <router-link to class="back"></router-link>
+            <router-link to='/Home' class="back"></router-link>
           <span class="head">评价列表</span>
            <span class="next"></span>
         </div>

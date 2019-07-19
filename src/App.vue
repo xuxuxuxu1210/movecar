@@ -19,9 +19,8 @@ export default {
   mounted() {
     console.log(setRem);
     setRem.setRem();
-    window.onresize = setRem.setRem;
-    // this.$router.push('/orderend')
-    // this.$router.push('/Evaluation');
+    window.onresize= setRem.setRem;
+    this.$router.push('/Evaluation');
   },
   watch: {
     //使用watch 监听$router的变化

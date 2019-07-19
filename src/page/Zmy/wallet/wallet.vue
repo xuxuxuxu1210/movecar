@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='wal'>
     <Header txt="我的钱包">
       <router-link to='' slot="left" class="left">
         <img src="./../img/icon_back@2x.png"/>
@@ -79,7 +79,9 @@ export default {
 </script>
 
 <style scoped lang='less'>
-.content {
+.wal{
+  text-align: center;
+  .content {
   .jifen {
     width: 100%;
     height: 1.16rem;
@@ -201,4 +203,7 @@ export default {
 
   }
 }
+
+}
+
 </style>

@@ -14,7 +14,9 @@
     </bm-driving>
   </baidu-map>
   <orderspeed></orderspeed>
+  <router-link to="/Orderinformation">
   <button_ text='立即还车' class="button_"></button_>
+  </router-link>
   </div>
 </template>
 
