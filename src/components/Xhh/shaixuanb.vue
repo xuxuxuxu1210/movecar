@@ -63,10 +63,9 @@ body ,html{
     background:#F7F8FA;
   width:100%;
   padding:100%;
+  overflow: hidden;
 }
 .shaixuanb{
-  margin-top:0.135rem;
-  
 .header {
   width: 100%;
   height: 0.45rem;

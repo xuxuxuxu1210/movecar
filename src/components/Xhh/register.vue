@@ -1,9 +1,8 @@
 <template>
-  <div>
       <div class="register">
 
 <div class="header">
-              <router-link to="/guide">
+              <router-link to="/home">
         <img src="./../../image/xhh/返回(1)拷贝6@2x.png" alt />
                  </router-link>
 </div>
@@ -11,65 +10,77 @@
     <img src="./../../image/xhh/图层2@2x.png" alt="">
 </div>
 <div class="ipt">
-<form action="http://172.25.1.175:8080/user/regist" method="post" class="top" >
-<input type="text" required placeholder="请输入手机号" id='phone'>
-<input type="text" required placeholder="请输入验证码" id='pwd'>
-<input type="password" required placeholder="请输入密码">
-<div v-show="show" @click="getCode" class="right">获取验证码</div>
-<div v-show="!show" class="count right">{{count}} s</div>
- <router-link to="/login">
+<div class="top" >
+<input type="text" required placeholder="请输入手机号" v-model="tel" id="phone">
+<input type="text" required placeholder="请输入验证码" id="yzm">
+<input type="password" required placeholder="请输入密码" v-model="password" id="pwd">
+<div id="spa" @click="getCode" class="right">获取验证码</div>
 <input type="submit" value="注册" class="button" @click="res()">
- </router-link>
-</form>
-
-
+</div>
 <p class="tpb">点击注册表示同意《平价租车协议》</p>
-
 </div>
   </div>
-  </div>
 </template>
-
 <script>
+import qs from  'qs'
 import { Toast } from 'vant';
+
 export default {
   data() {
     return {
-      
-show: true,
-   count: '',
-   timer: null,
+      tel: "",
+      password: "",
+      Num:"",
     }
   },
   methods: {
 getCode(){
-     const TIME_COUNT = 60;
-     if (!this.timer) {
-       this.count = TIME_COUNT;
-       this.show = false;
-       this.timer = setInterval(() => {
-       if (this.count > 0 && this.count <= TIME_COUNT) {
-         this.count--;
-        } else {
-         this.show = true;
-         clearInterval(this.timer);
-         this.timer = null;
-        }
-       }, 1000)
-      }
-   } ,
-     res(){ 
-    var phone = document.getElementById('phone').value;
-    var pwd = document.getElementById('pwd').value;
-    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
-      Toast('手机号不规范');
-        return false; 
-    }
-     else if(!( /^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/.test(pwd))){
-Toast('密码格式错误');
-     }else{};
-     
+    let num="";
+     let spa = document.getElementById('spa');
+for(var i=0;i<4;i++){
+  num+=Math.floor(Math.random()*10)
+  this.Num=num
 }
+spa.innerHTML=num;
+   } ,
+      res() {
+    let phone = document.getElementById('phone').value;
+    let pwd = document.getElementById('pwd').value;
+    let yzm = document.getElementById('yzm').value;
+   
+    
+    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+        Toast("手机号码不符合规范");  
+        return false; 
+    } else if(this.Num!=yzm){
+        Toast('验证码错误');
+         return false;
+    }
+    else if(!/^[0-9A-Za-z]{6,15}$/.test(pwd)){
+        Toast('密码格式错误');
+         return false;
+    }
+    else{
+   
+        let ress=this;
+      this.axios.post("http://172.25.1.156:8080/userLoginAndRegist/regist", qs.stringify( {
+          tel: this.tel,
+          password: this.password
+        }))
+        .then(function(res) {
+          console.log(res)
+          if (res.data.status == false) {
+            Toast('账号或密码格式错误');
+          } else {
+            let instance = Toast("注册成功，请登录!");
+            setTimeout(() => {
+              instance.close();
+              ress.$router.push("/login");
+            }, 500);
+          }
+        });
+    }
+ }
   },
   components: {
 
@@ -80,6 +91,9 @@ Toast('密码格式错误');
 <style scoped lang="less">
 
 .register{
+  width:100%;
+  height:100%;
+  overflow: hidden;
 .header {
     margin-top:.35rem;
     margin-left:.32rem;

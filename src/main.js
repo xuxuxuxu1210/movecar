@@ -6,6 +6,10 @@ import router from './router'
 
 import Axios from "axios"
 Vue.prototype.axios = Axios
+import qs from  'qs'
+Vue.prototype.$qs = qs;
+
+
 
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import 'swiper/dist/css/swiper.css'

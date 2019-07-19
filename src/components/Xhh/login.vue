@@ -1,24 +1,20 @@
 <template>
-  <div>
-      <div class="register">
+      <div class="login">
 <div class="log">
     <img src="./../../image/xhh/图层2@2x.png" alt="">
 </div>
 <div class="box">
-  <form action="http://172.25.1.175:8080/user/login" method="post">
+ 
   <div class="input">
 <span class="spimg"><img src="./../../image/xhh/个人@2x.png" alt=""></span>
-<span class="spinput"><input type="text" required placeholder="请输入您的帐号"></span>
+<span class="spinput"><input type="text" required placeholder="请输入您的帐号" v-model="tel" id="phone"></span>
 </div>
 <div class="input inputa">
 <span class="spimg"><img src="./../../image/xhh/密码@2x.png" alt=""></span>
-<span class="spinput"><input type="password" required placeholder="请输入您的密码"></span>
+<span class="spinput"><input type="password" required placeholder="请输入您的密码" v-model="password" id="pwd"></span>
 </div>
+<input type="submit" value="登录" class="button" @click="but()">
 
-<router-link to="/home">
-<input type="submit" value="登录" class="button">
-</router-link>
-</form>
 <p class="tp">
   <router-link to="/register">
   <span>注册账号</span>
@@ -37,21 +33,51 @@
 </footer>
 </div>
   </div>
-
-  </div>
 </template>
 
 <script>
+import qs from  'qs'
+import { Toast } from 'vant'
+
 export default {
   data() {
     return {
-
+      tel: "",
+      password: "",
     }
   },
   methods: {
-
+ but() {
+        let phone = document.getElementById('phone').value;
+    let pwd = document.getElementById('pwd').value;
+    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+        Toast("手机号码不符合规范");  
+        return false; 
+    } else if(!/^[0-9A-Za-z]{6,15}$/.test(pwd)){
+        Toast('密码格式错误');
+    }else{
+   
+        let ress=this;
+      this.axios.post("http://172.25.1.156:8080/userLoginAndRegist/login", qs.stringify( {
+          tel: this.tel,
+          password: this.password
+        }))
+        .then(function(res) {
+          if (res.data.status == false) {
+            Toast('账号或密码错误');
+          } else {
+            let instance = Toast("登录成功!");
+            setTimeout(() => {
+              instance.close();
+              ress.$router.push("/home");
+            }, 500);
+          }
+        });
+    }
+ }
   },
   components: {
+
 
   }
 }
@@ -59,7 +85,10 @@ export default {
 
 <style scoped lang="less">
 
-.register{
+.login{
+  width:100%;
+  height:100%;
+  overflow: hidden;
      font-size:0;
 .log{
     margin-top:.81rem;
@@ -77,7 +106,7 @@ export default {
     background:rgba(255,255,255,1);
     box-shadow:0px 5px 20px 0px rgba(223,223,223,0.91);
     border-radius:20px;
-    form{
+   
         .input{
             width:3.19rem;
             height:.5rem;
@@ -135,7 +164,7 @@ export default {
         font-size:.16rem;
         border-radius:23px;
     }
-    }
+    
     .tp{
       margin-top:.38rem;
         span{
@@ -157,6 +186,7 @@ export default {
     }
     .tpa{
       margin-top:.87rem;
+          margin-left: .2rem;
       span{
         display:inline-block;
         width:.83rem;
@@ -167,7 +197,7 @@ export default {
         height:.12rem;
         border:none;
         margin-left:.22rem;
-        margin-right:.37rem;
+        margin-right:.1rem;
         font-size:12px;
         font-family:PingFang-SC-Regular;
         font-weight:400;
@@ -179,7 +209,7 @@ export default {
       margin-top:.28rem;
       font-size:0;
       img{
-        margin-left:.61rem;
+      margin-left:.61rem;
       width:.32rem;
       height:.32rem;
       float:left;
