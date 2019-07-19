@@ -7,6 +7,7 @@ import router from './router'
 import Axios from "axios"
 Vue.prototype.axios = Axios
 
+
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
   Vue.use(MintUI)
@@ -15,6 +16,12 @@ import 'mint-ui/lib/style.css'
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import 'swiper/dist/css/swiper.css'
 // Vue.use(VueAwesomeSwiper, /* { default global options } */);
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */);
+
+
 
 import Vant from 'vant';
 import 'vant/lib/index.css';

@@ -3,7 +3,7 @@
     <div class="header">
       <span class="back">
         <router-link to="/Home">
-        <img src="../image/nav-icon@2x.png" alt />
+          <img src="../image/nav-icon@2x.png" alt />
         </router-link>
       </span>
       <span class="head">驾驶证</span>
@@ -33,9 +33,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-
 .big-box {
- 
   .header {
     width: 100%;
     height: 0.45rem;

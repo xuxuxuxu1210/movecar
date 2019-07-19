@@ -3,7 +3,7 @@
     <div class="header">
       <span class="back">
         <router-link to="/Home">
-          <img src="../image/nav-icon@2x.png" alt />
+        <img src="../image/nav-icon@2x.png" alt />
         </router-link>
       </span>
       <span class="head">选择车型</span>
@@ -75,7 +75,6 @@
           </h5>
         </div>
       </li>
-
       <li class="listcar">
         <img src="../image/car_lanniao@2x.png" alt class="leftcar" />
         <div class="rightcar">
