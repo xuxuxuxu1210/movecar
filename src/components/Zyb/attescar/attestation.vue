@@ -2,9 +2,11 @@
   <div class="big-box">
     <div class="header">
       <span class="back">
-        <img src="../image/nav-icon@2x.png" alt />
+        <router-link to="/Home">
+          <img src="../image/nav-icon@2x.png" alt />
+        </router-link>
       </span>
-      <span class="head">评价列表</span>
+      <span class="head">驾驶证</span>
     </div>
     <div class="driving">
       <h1>请按图示上传驾照（正、负页）照片</h1>
@@ -31,9 +33,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-
 .big-box {
- 
   .header {
     width: 100%;
     height: 0.45rem;
