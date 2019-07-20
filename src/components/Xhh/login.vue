@@ -48,17 +48,16 @@ export default {
   },
   methods: {
  but() {
-        let phone = document.getElementById('phone').value;
-    let pwd = document.getElementById('pwd').value;
-    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+       
+    if(!(/^1[3456789]\d{9}$/.test(this.tel))){ 
         Toast("手机号码不符合规范");  
         return false; 
-    } else if(!/^[0-9A-Za-z]{6,15}$/.test(pwd)){
+    } else if(!/^[0-9A-Za-z]{6,15}$/.test(this.password)){
         Toast('密码格式错误');
     }else{
    
         let ress=this;
-      this.axios.post("http://172.25.1.156:8080/userLoginAndRegist/login", qs.stringify( {
+      this.axios.post("http://172.25.1.194:8080/userLoginAndRegist/login", qs.stringify( {
           tel: this.tel,
           password: this.password
         }))

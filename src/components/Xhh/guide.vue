@@ -23,6 +23,7 @@
           </ul>
         </div>
         <router-link to="/register" class="swiper-slide lead-boxs">
+        <div class="reg">点击注册</div> 
           <img src="./../../image/xhh/yindao-03.png" alt class="lead-img" />
           <p class="tp">准确定位</p>
           <p class="tpa">准时，准点，安全出行</p>
@@ -73,6 +74,23 @@ body {
 }
 .lead-box {
   width: 100%;
+  .reg{
+    position: fixed;
+    top: 0.2rem;
+    left:7.87rem;
+    font-size: .15rem;
+    font-weight: 100;
+    border: 0.5px solid rgba(249,195,7,1);
+        color:rgba(249,195,7,1);
+        font-weight:bold;
+    width:1rem;
+    height:.3rem;
+    line-height: .3rem;
+    border-radius:.2rem;
+     margin-left:60%;
+     margin-top:.1rem;
+     text-align:center;
+  }
   .tp {
     width: 100%;
     margin-left: 1.3rem;

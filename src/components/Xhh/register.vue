@@ -11,10 +11,11 @@
 </div>
 <div class="ipt">
 <div class="top" >
-<input type="text" required placeholder="请输入手机号" v-model="tel" id="phone">
-<input type="text" required placeholder="请输入验证码" id="yzm">
-<input type="password" required placeholder="请输入密码" v-model="password" id="pwd">
-<div id="spa" @click="getCode" class="right">获取验证码</div>
+<input type="text" required placeholder="请输入手机号"   v-model="phone" >
+<input type="text" required placeholder="请输入验证码" v-model="yzm"  >
+<div v-show="show" @click="getCode" class="right" >获取验证码</div>
+<div v-show="!show" class="count right">{{count}} s</div>
+<input type="password" required placeholder="请输入密码" v-model="password"> 
 <input type="submit" value="注册" class="button" @click="res()">
 </div>
 <p class="tpb">点击注册表示同意《平价租车协议》</p>
@@ -28,43 +29,60 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      tel: "",
+      phone: "",
       password: "",
-      Num:"",
+      yzm:"",
+    show: true,
+   count: '',
+   timer: null,
+   suma:null,
     }
   },
   methods: {
 getCode(){
-    let num="";
-     let spa = document.getElementById('spa');
-for(var i=0;i<4;i++){
-  num+=Math.floor(Math.random()*10)
-  this.Num=num
-}
-spa.innerHTML=num;
-   } ,
+          this.axios.post("http://172.25.1.194:8080/userLoginAndRegist/send", qs.stringify( {
+          phone: this.phone,
+        }))
+        .then((getCode)=> {
+          console.log(getCode);
+          console.log(getCode.data);
+          console.log(typeof getCode.data.result);
+         this.suma=getCode.data.result;
+          console.log(getCode.data.result.result);
+          console.log(this.suma);
+        });
+     const TIME_COUNT = 60;
+     if (!this.timer) {
+       this.count = TIME_COUNT;
+       this.show = false;
+       this.timer = setInterval(() => {
+       if (this.count > 0 && this.count <= TIME_COUNT) {
+         this.count--;
+        } else {
+         this.show = true;
+         clearInterval(this.timer);
+         this.timer = null;
+        }
+       }, 1000)
+       
+      }
+   }  ,
       res() {
-    let phone = document.getElementById('phone').value;
-    let pwd = document.getElementById('pwd').value;
-    let yzm = document.getElementById('yzm').value;
-   
-    
-    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+    if(!(/^1[3456789]\d{9}$/.test(this.phone))){ 
         Toast("手机号码不符合规范");  
         return false; 
-    } else if(this.Num!=yzm){
-        Toast('验证码错误');
-         return false;
-    }
-    else if(!/^[0-9A-Za-z]{6,15}$/.test(pwd)){
+    }else if (this.suma !=this.yzm ) {
+            Toast('验证码错误');
+          }
+    else if(!/^[0-9A-Za-z]{6,15}$/.test(this.password)){
         Toast('密码格式错误');
          return false;
     }
     else{
    
         let ress=this;
-      this.axios.post("http://172.25.1.156:8080/userLoginAndRegist/regist", qs.stringify( {
-          tel: this.tel,
+      this.axios.post("http://172.25.1.194:8080/userLoginAndRegist/regist", qs.stringify( {
+          phone: this.phone,
           password: this.password
         }))
         .then(function(res) {
