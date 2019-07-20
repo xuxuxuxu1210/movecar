@@ -147,6 +147,7 @@ getCode(){
         position: relative;
         input{
             margin:0;
+            padding-left:.5rem;
             width:100%;
             height:.4rem;
             border-bottom: 1px solid rgba(232,232,232,1); 
@@ -156,7 +157,7 @@ getCode(){
                font-weight:400;
                color:rgba(153,153,153,1);
                line-height:.14rem;
-               padding-left:.53rem;
+         
         }
         input:nth-child(1){
             margin-top:.35rem;
@@ -187,6 +188,7 @@ getCode(){
         border-radius:23px;
         margin-top:.33rem;
         margin-left:.09rem;
+        padding:0;
     }
     }
    

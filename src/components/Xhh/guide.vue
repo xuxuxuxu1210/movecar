@@ -77,7 +77,7 @@ body {
   .reg{
     position: fixed;
     top: 0.2rem;
-    left:7.87rem;
+    
     font-size: .15rem;
     font-weight: 100;
     border: 0.5px solid rgba(249,195,7,1);
